@@ -110,6 +110,11 @@
             <version>0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
+            <groupId>com.mhschmieder</groupId>
+            <artifactId>fxcharttoolkit</artifactId>
+            <version>0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
         	<groupId>com.mhschmieder</groupId>
         	<artifactId>fxacousticsgui</artifactId>
         	<version>0.1-SNAPSHOT</version>
