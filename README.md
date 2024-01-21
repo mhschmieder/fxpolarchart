@@ -1,5 +1,5 @@
 # fxpolarchart
-JavaFX wrapper for Polar Chart implemented in Swing.
+JavaFX wrapper for Polar Charts that were implemented in Swing.
 
 This code was split off from charttoolkit and fxcharttoolkit because it is pretty much a self-contained code set that doesn't use FX Charts due to no polar chart in the core toolkit. Furthermore, most well-known charting toolkits do not handle the specific needs of acoustical polar charts, where amplitude is generally represented in relative terms, meaning negative numbers along the radial axis, which breaks the rules of most charting toolkits' polar chart axes.
 
