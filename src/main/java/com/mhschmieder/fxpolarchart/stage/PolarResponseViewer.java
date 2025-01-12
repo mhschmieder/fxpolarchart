@@ -1,7 +1,7 @@
 /**
  * MIT License
  *
- * Copyright (c) 2020, 2024 Mark Schmieder
+ * Copyright (c) 2020, 2025 Mark Schmieder
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -54,6 +54,7 @@ import com.mhschmieder.acousticstoolkit.FrequencyRange;
 import com.mhschmieder.acousticstoolkit.FrequencySignalUtilities;
 import com.mhschmieder.acousticstoolkit.RelativeBandwidth;
 import com.mhschmieder.commonstoolkit.branding.ProductBranding;
+import com.mhschmieder.commonstoolkit.io.FileMode;
 import com.mhschmieder.commonstoolkit.io.FileStatus;
 import com.mhschmieder.commonstoolkit.io.FileUtilities;
 import com.mhschmieder.commonstoolkit.io.IoUtilities;
@@ -98,7 +99,7 @@ import javafx.stage.Modality;
 public class PolarResponseViewer extends XStage {
 
 
-    public static final String POLAR_RESPONSE_FRAME_TITLE_DEFAULT   = "Polar Response Viewer"; //$NON-NLS-1$
+    public static final String POLAR_RESPONSE_FRAME_TITLE_DEFAULT   = "Polar Response Viewer";
 
     // Default window locations and dimensions.
     public static final int    POLAR_RESPONSE_VIEWER_X_DEFAULT      = 20;
@@ -376,15 +377,21 @@ public class PolarResponseViewer extends XStage {
     protected final void doExportImageGraphics() {
         // Switch on export context, so we know which type of data and format to
         // save.
-        final String imageCategory = "Polar Response";
-        fileExportImageGraphics( imageCategory );
+        final String graphicsCategory = "Polar Response";
+        fileExportRasterGraphics( this, 
+                                  _defaultDirectory, 
+                                  clientProperties, 
+                                  graphicsCategory );
     }
 
     protected final void doExportVectorGraphics() {
         // Switch on export context, so we know which type of data and format to
         // save.
         final String graphicsCategory = "Polar Response";
-        fileExportVectorGraphics( graphicsCategory );
+        fileExportVectorGraphics( this, 
+                                  _defaultDirectory, 
+                                  clientProperties, 
+                                  graphicsCategory );
     }
 
     public final void doSaveServerResponse() {
@@ -476,7 +483,8 @@ public class PolarResponseViewer extends XStage {
     // Take care of any extensions specific to this sub-class.
     @Override
     public final FileStatus fileSaveExtensions( final File file,
-                                                final File tempFile ) {
+                                                final File tempFile,
+                                                final FileMode fileMode ) {
         // Pre-declare the File Save status in case of exceptions.
         FileStatus fileStatus = FileStatus.WRITE_ERROR;
 
@@ -800,6 +808,8 @@ public class PolarResponseViewer extends XStage {
 
         // Save a server response file using the selected filename.
         fileSaveAs( this,
+                    FileMode.SAVE_SERVER_RESPONSE,
+                    clientProperties,
                     title,
                     _defaultDirectory,
                     extensionFilterAdditions,
