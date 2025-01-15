@@ -243,7 +243,7 @@ public class PolarResponseViewer extends XStage {
         _actions._fileActions._printAction.setEventHandler( evt -> doPrint() );
 
         // Load the action handlers for the "Export" actions.
-        _actions._fileActions._exportActions._exportImageGraphicsAction
+        _actions._fileActions._exportActions._exportRasterGraphicsAction
                 .setEventHandler( evt -> doExportImageGraphics() );
         _actions._fileActions._exportActions._exportVectorGraphicsAction
                 .setEventHandler( evt -> doExportVectorGraphics() );
@@ -348,7 +348,6 @@ public class PolarResponseViewer extends XStage {
 
     public final void doExportRenderedGraphics() {
         // Update the Graphics Category for the Export Button tool tip.
-        final String graphicsCategory = "Polar Response";
         _renderedGraphicsExportPreview.setGraphicsCategory( graphicsCategory );
 
         // Update the target Swing Component to sync with the related JavaFX
@@ -374,26 +373,6 @@ public class PolarResponseViewer extends XStage {
         toFront();
     }
 
-    protected final void doExportImageGraphics() {
-        // Switch on export context, so we know which type of data and format to
-        // save.
-        final String graphicsCategory = "Polar Response";
-        fileExportRasterGraphics( this, 
-                                  _defaultDirectory, 
-                                  clientProperties, 
-                                  graphicsCategory );
-    }
-
-    protected final void doExportVectorGraphics() {
-        // Switch on export context, so we know which type of data and format to
-        // save.
-        final String graphicsCategory = "Polar Response";
-        fileExportVectorGraphics( this, 
-                                  _defaultDirectory, 
-                                  clientProperties, 
-                                  graphicsCategory );
-    }
-
     public final void doSaveServerResponse() {
         // Invoke the common prediction method, then save the returned ZIP
         // file to disc.
@@ -413,6 +392,8 @@ public class PolarResponseViewer extends XStage {
                    POLAR_RESPONSE_VIEWER_WIDTH_DEFAULT,
                    POLAR_RESPONSE_VIEWER_HEIGHT_DEFAULT,
                    true );
+        
+        graphicsCategory = "Polar Response";
     }
 
     // Load the relevant actions for this Stage.
