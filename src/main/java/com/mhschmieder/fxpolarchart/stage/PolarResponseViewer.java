@@ -56,14 +56,12 @@ import com.mhschmieder.acousticstoolkit.RelativeBandwidth;
 import com.mhschmieder.commonstoolkit.branding.ProductBranding;
 import com.mhschmieder.commonstoolkit.io.FileMode;
 import com.mhschmieder.commonstoolkit.io.FileStatus;
-import com.mhschmieder.commonstoolkit.io.FileUtilities;
 import com.mhschmieder.commonstoolkit.io.IoUtilities;
 import com.mhschmieder.commonstoolkit.net.DataServerResponse;
 import com.mhschmieder.commonstoolkit.net.HttpServletRequestProperties;
 import com.mhschmieder.commonstoolkit.security.ServerLoginCredentials;
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxconcurrent.stage.DataRequestStatusViewer;
-import com.mhschmieder.fxguitoolkit.action.BackgroundColorChoices;
 import com.mhschmieder.fxguitoolkit.control.TextSelector;
 import com.mhschmieder.fxguitoolkit.dialog.DialogUtilities;
 import com.mhschmieder.fxguitoolkit.stage.ExtensionFilterUtilities;
@@ -505,40 +503,63 @@ public class PolarResponseViewer extends XStage {
     }
 
     // Load all of the User Preferences for this Stage.
-    // TODO: Make a class with get/set methods for user preferences, a la
-    //  Listing 3.3 on p. 37 of "More Java Pitfalls" (Wiley), and including
-    //  static default values for better modularity.
     @Override
-    public final void loadPreferences() {
-        // Get the user node for this package/class, so that we get the
-        // preferences specific to this frame and user.
-        final Preferences prefs = Preferences.userNodeForPackage( getClass() );
+    public final Preferences loadPreferences() {
+        // Call the superclass to load any shared preferences first. It will use
+        // the same preferences node without closing it, so we can append here.
+        final Preferences prefs = super.loadPreferences();
 
         final String sRelativeBandwidth = prefs.get( "relativeBandwidth",
                                                      FrequencyRange.RELATIVE_BANDWIDTH_DEFAULT );
         final String sOctaveRange = prefs.get( "octaveRange",
                                                FrequencyRange.OCTAVE_RANGE_WIDE_DEFAULT );
         final double centerFrequencyDefault = FrequencyRange
-                .getNominalCenterFrequencyDefaultForOctaveRange( sOctaveRange, false );
-        final double centerFrequency = prefs.getDouble( "centerFrequency", centerFrequencyDefault );
-
-        // Create and set the visualization parameters.
-        final String backgroundColor = prefs
-                .get( "backgroundColor", BackgroundColorChoices.DEFAULT_BACKGROUND_COLOR_NAME );
+                .getNominalCenterFrequencyDefaultForOctaveRange( sOctaveRange, 
+                                                                 false );
+        final double centerFrequency = prefs.getDouble( "centerFrequency", 
+                                                        centerFrequencyDefault );
+        final FrequencyRange frequencyRange = new FrequencyRange(
+                RelativeBandwidth.fromPresentationString( sRelativeBandwidth ), 
+                sOctaveRange, 
+                centerFrequency );
+        setFrequencyRange( _frequencyRange );
+        
+        // Set the appropriate grid spacing for polar response radial scale.
         final int gridSpacing = prefs.getInt( "gridSpacing",
                                               SemiLogRPolarChart.DEFAULT_GRID_SPACING );
+        setGridSpacing( gridSpacing );
+        
+        return prefs;
+    }
 
-        // Load the Default Directory from User Preferences.
-        final File defaultDirectory = FileUtilities.loadDefaultDirectoryPreferences( prefs );
+    // Save all of the non-login user preferences for this frame.
+    @Override
+    public final Preferences savePreferences() {
+        // Call the superclass to save any shared preferences first. It will use
+        // the same preferences node without closing it, so we can append here.
+        final Preferences prefs = super.loadPreferences();
 
-        // Forward the preferences data from the stored preferences to the
-        // common preferences handler.
-        updatePreferences( backgroundColor,
-                           RelativeBandwidth.fromPresentationString( sRelativeBandwidth ),
-                           sOctaveRange,
-                           centerFrequency,
-                           gridSpacing,
-                           defaultDirectory );
+        final RelativeBandwidth relativeBandwidth = _frequencyRange.getRelativeBandwidth();
+        prefs.put( "relativeBandwidth", relativeBandwidth.toPresentationString() );
+        final String octaveRange = _frequencyRange.getOctaveRange();
+        prefs.put( "octaveRange", octaveRange );
+        final double centerFrequency = _frequencyRange.getCenterFrequency();
+        prefs.putDouble( "centerFrequency", centerFrequency );
+
+        final int gridSpacing = _polarResponsePane.getGridSpacing();
+        prefs.putInt( "gridSpacing", gridSpacing );
+        
+        return prefs;
+    }
+    
+    @Override
+    public String getBackgroundColor() {
+        return _actions.getSelectedBackgroundColorName();
+    }
+
+    @Override
+    public void selectBackgroundColor( final String backgroundColorName ) {
+        _actions.selectBackgroundColor( backgroundColorName );
     }
 
     private final void loadServerResponse() {
@@ -753,32 +774,6 @@ public class PolarResponseViewer extends XStage {
         super.prepareForInput( menuBar );
     }
 
-    // Save all of the non-login user preferences for this frame.
-    // TODO: Make a class with get/set methods for user preferences, a la
-    //  Listing 3.3 on p. 37 of "More Java Pitfalls" (Wiley).
-    @Override
-    public final void savePreferences() {
-        // Get the user node for this package/class, so that we get the
-        // preferences specific to this frame and user.
-        final Preferences prefs = Preferences.userNodeForPackage( getClass() );
-
-        final String backgroundColor = _actions.getSelectedBackgroundColorName();
-        prefs.put( "backgroundColor", backgroundColor );
-
-        final RelativeBandwidth relativeBandwidth = _frequencyRange.getRelativeBandwidth();
-        prefs.put( "relativeBandwidth", relativeBandwidth.toPresentationString() );
-        final String octaveRange = _frequencyRange.getOctaveRange();
-        prefs.put( "octaveRange", octaveRange );
-        final double centerFrequency = _frequencyRange.getCenterFrequency();
-        prefs.putDouble( "centerFrequency", centerFrequency );
-
-        final int gridSpacing = _polarResponsePane.getGridSpacing();
-        prefs.putInt( "gridSpacing", gridSpacing );
-
-        // Save the Default Directory to User Preferences.
-        FileUtilities.saveDefaultDirectoryPreferences( _defaultDirectory, prefs );
-    }
-
     // This is a wrapper to ensure that all server response save actions are
     // treated uniformly. This version of the method uses JavaFX.
     private final void saveServerResponse() {
@@ -967,29 +962,6 @@ public class PolarResponseViewer extends XStage {
                                                           centerFrequency );
 
         return true;
-    }
-
-    // Update all of the user preferences for this stage.
-    // TODO: Make a preferences object instead, with get/set methods, which can
-    //  be set from CSV, XML, or stored user preferences?
-    private final void updatePreferences( final String backgroundColorName,
-                                          final RelativeBandwidth relativeBandwidth,
-                                          final String sOctaveRange,
-                                          final double centerFrequency,
-                                          final int gridSpacing,
-                                          final File defaultDirectory ) {
-        // Set the Background Color for most layout content.
-        final Color backgroundColor = _actions.selectBackgroundColor( backgroundColorName );
-        setForegroundFromBackground( backgroundColor );
-
-        _frequencyRange = new FrequencyRange( relativeBandwidth, sOctaveRange, centerFrequency );
-        setFrequencyRange( _frequencyRange );
-
-        // Set the appropriate grid spacing for polar response radial scale.
-        setGridSpacing( gridSpacing );
-
-        // Reset the default directory for local file operations.
-        setDefaultDirectory( defaultDirectory );
     }
 
     public final boolean updateVerticalPolarResponse( final SwappedDataInputStream inputStream,
