@@ -57,6 +57,7 @@ import com.mhschmieder.commonstoolkit.branding.ProductBranding;
 import com.mhschmieder.commonstoolkit.io.FileMode;
 import com.mhschmieder.commonstoolkit.io.FileStatus;
 import com.mhschmieder.commonstoolkit.io.IoUtilities;
+import com.mhschmieder.commonstoolkit.io.ZipUtilities;
 import com.mhschmieder.commonstoolkit.net.DataServerResponse;
 import com.mhschmieder.commonstoolkit.net.HttpServletRequestProperties;
 import com.mhschmieder.commonstoolkit.security.ServerLoginCredentials;
@@ -488,7 +489,7 @@ public class PolarResponseViewer extends XStage {
                                                                         new BufferedOutputStream( fileOutputStream );
                         final ZipOutputStream zipOutputStream =
                                                               new ZipOutputStream( bufferedOutputStream ) ) {
-                    fileStatus = IoUtilities.saveByteArrayToZip( _serverResponseData,
+                    fileStatus = ZipUtilities.saveByteArrayToZip( _serverResponseData,
                                                                  _productBranding,
                                                                  clientProperties.locale,
                                                                  zipOutputStream );
