@@ -8,7 +8,7 @@
     <version>0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>FxPolarChart</name>
+    <name>fxpolarchart</name>
     <url>https://github.com/mhschmieder/fxpolarchart</url>
     <description>JavaFX wrapper for Polar Charts that were implemented in Swing.</description>
 
