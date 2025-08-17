@@ -387,7 +387,7 @@ public class PolarResponseViewer extends XStage {
     @SuppressWarnings("nls")
     protected final void initStage() {
         // First have the superclass initialize its content.
-        initStage( "/icons/mhschmieder/PolarResponse16.png",
+        initStage( "/icons/mhschmieder/PolarCrosshairs16.png",
                    POLAR_RESPONSE_VIEWER_WIDTH_DEFAULT,
                    POLAR_RESPONSE_VIEWER_HEIGHT_DEFAULT,
                    true );
@@ -418,8 +418,8 @@ public class PolarResponseViewer extends XStage {
                                                                 _productBranding,
                                                                 clientProperties,
                                                                 "Server Connection Issues",
-                                                                "/icons/mhschmieder/PolarResponse16.png",
-                                                                "/icons/mhschmieder/PolarResponse16.png" );
+                                                                "/icons/mhschmieder/PolarCrosshairs16.png",
+                                                                "/icons/mhschmieder/PolarCrosshairs16.png" );
         _windowManager.addStage( _dataRequestStatusViewer );
 
        // Instantiate the modal Rendered Graphics Export Preview.
