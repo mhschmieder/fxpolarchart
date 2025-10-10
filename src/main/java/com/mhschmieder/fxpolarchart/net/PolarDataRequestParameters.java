@@ -30,13 +30,13 @@
  */
 package com.mhschmieder.fxpolarchart.net;
 
-import java.net.HttpURLConnection;
-
 import com.mhschmieder.acousticstoolkit.FrequencyRange;
 import com.mhschmieder.acousticstoolkit.RelativeBandwidth;
 import com.mhschmieder.commonstoolkit.net.DataRequestParameters;
 import com.mhschmieder.commonstoolkit.security.LoginCredentials;
 import com.mhschmieder.commonstoolkit.util.DataUpdateType;
+
+import java.net.HttpURLConnection;
 
 /**
  * This class holds the semi-volatile parameters unique to each data request.

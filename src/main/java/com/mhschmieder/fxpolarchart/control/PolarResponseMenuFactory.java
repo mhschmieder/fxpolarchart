@@ -30,10 +30,6 @@
  */
 package com.mhschmieder.fxpolarchart.control;
 
-import java.util.Collection;
-
-import org.controlsfx.control.action.Action;
-
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxcharttoolkit.action.TestActions;
 import com.mhschmieder.fxguitoolkit.action.XActionGroup;
@@ -42,10 +38,12 @@ import com.mhschmieder.fxpolarchart.action.PolarResponseActions;
 import com.mhschmieder.fxpolarchart.action.PolarResponseAmplitudeScaleChoices;
 import com.mhschmieder.fxpolarchart.action.PolarResponseLabeledActionFactory;
 import com.mhschmieder.fxpolarchart.action.PolarResponseViewActions;
-
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
+import org.controlsfx.control.action.Action;
+
+import java.util.Collection;
 
 /**
  * This is a factory class for generating Menus for Polar Response.

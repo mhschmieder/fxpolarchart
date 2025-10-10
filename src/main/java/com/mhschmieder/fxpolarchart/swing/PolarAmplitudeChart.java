@@ -1,7 +1,7 @@
-/**
+/*
  * MIT License
  *
- * Copyright (c) 2020, 2024 Mark Schmieder
+ * Copyright (c) 2020, 2025 Mark Schmieder
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -30,13 +30,12 @@
  */
 package com.mhschmieder.fxpolarchart.swing;
 
-import java.awt.Dimension;
-
-import org.apache.commons.math3.util.FastMath;
-
 import com.mhschmieder.acousticstoolkit.FrequencySignalUtilities;
 import com.mhschmieder.acousticstoolkit.RelativeBandwidth;
 import com.mhschmieder.mathtoolkit.MathConstants;
+import org.apache.commons.math3.util.FastMath;
+
+import java.awt.Dimension;
 
 public final class PolarAmplitudeChart extends SemiLogRPolarChart {
     /**
@@ -153,8 +152,8 @@ public final class PolarAmplitudeChart extends SemiLogRPolarChart {
         // Update the plot label and the data set.
         final String sCenterFrequency = FrequencySignalUtilities
                 .getFormattedFrequency( centerFrequency, numberFormat );
-        final String xLabel = acousticSourceModel + " " + relativeBandwidth.toPresentationString() //$NON-NLS-1$
-                + " centered at " + sCenterFrequency; //$NON-NLS-1$
+        final String xLabel = acousticSourceModel + " " + relativeBandwidth.label()
+                + " centered at " + sCenterFrequency;
         setXLabel( xLabel );
         setData( amplitude, _theta );
 

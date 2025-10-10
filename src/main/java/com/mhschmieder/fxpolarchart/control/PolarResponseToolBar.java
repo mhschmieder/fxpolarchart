@@ -30,15 +30,14 @@
  */
 package com.mhschmieder.fxpolarchart.control;
 
-import java.text.NumberFormat;
-
 import com.mhschmieder.acousticstoolkit.FrequencyRange;
 import com.mhschmieder.acousticstoolkit.RelativeBandwidth;
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxacousticsgui.control.FrequencyRangeControls;
 import com.mhschmieder.fxguitoolkit.control.TextSelector;
-
 import javafx.scene.control.ToolBar;
+
+import java.text.NumberFormat;
 
 public final class PolarResponseToolBar extends ToolBar {
 

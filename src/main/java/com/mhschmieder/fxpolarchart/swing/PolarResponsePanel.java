@@ -30,17 +30,16 @@
  */
 package com.mhschmieder.fxpolarchart.swing;
 
-import java.awt.Color;
-import java.awt.Graphics2D;
-import java.awt.RenderingHints;
+import com.mhschmieder.acousticstoolkit.RelativeBandwidth;
+import com.mhschmieder.fxguitoolkit.swing.RenderedGraphicsPanel;
+import com.mhschmieder.graphicstoolkit.color.ColorUtilities;
 
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.JPanel;
-
-import com.mhschmieder.acousticstoolkit.RelativeBandwidth;
-import com.mhschmieder.fxguitoolkit.swing.RenderedGraphicsPanel;
-import com.mhschmieder.graphicstoolkit.color.ColorUtilities;
+import java.awt.Color;
+import java.awt.Graphics2D;
+import java.awt.RenderingHints;
 
 public final class PolarResponsePanel extends RenderedGraphicsPanel {
     /**

@@ -30,6 +30,11 @@
  */
 package com.mhschmieder.fxpolarchart.swing;
 
+import com.mhschmieder.charttoolkit.layout.Chart;
+import com.mhschmieder.graphicstoolkit.color.ColorUtilities;
+import com.mhschmieder.graphicstoolkit.font.FontUtilities;
+import com.mhschmieder.mathtoolkit.MathConstants;
+
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Font;
@@ -44,11 +49,6 @@ import java.awt.geom.Point2D;
 import java.text.NumberFormat;
 import java.util.Arrays;
 import java.util.Locale;
-
-import com.mhschmieder.charttoolkit.layout.Chart;
-import com.mhschmieder.graphicstoolkit.color.ColorUtilities;
-import com.mhschmieder.graphicstoolkit.font.FontUtilities;
-import com.mhschmieder.mathtoolkit.MathConstants;
 
 /**
  * Class <code>SemiLogRPolarChart</code> contains methods to plot <i>(x,y)</i>

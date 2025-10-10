@@ -30,9 +30,6 @@
  */
 package com.mhschmieder.fxpolarchart.layout;
 
-import java.awt.EventQueue;
-import java.awt.RenderingHints;
-
 import com.mhschmieder.acousticstoolkit.RelativeBandwidth;
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxguitoolkit.layout.LayoutFactory;
@@ -40,7 +37,6 @@ import com.mhschmieder.fxpolarchart.action.PolarResponseActions;
 import com.mhschmieder.fxpolarchart.control.PolarResponseMenuFactory;
 import com.mhschmieder.fxpolarchart.swing.PolarAmplitudeChart;
 import com.mhschmieder.graphicstoolkit.GraphicsUtilities;
-
 import javafx.embed.swing.SwingNode;
 import javafx.scene.Node;
 import javafx.scene.control.ContextMenu;
@@ -49,6 +45,9 @@ import javafx.scene.layout.Background;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Window;
+
+import java.awt.EventQueue;
+import java.awt.RenderingHints;
 
 public final class PolarResponsePane extends BorderPane {
 

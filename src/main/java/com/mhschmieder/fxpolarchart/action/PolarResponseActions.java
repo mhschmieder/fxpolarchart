@@ -30,19 +30,17 @@
  */
 package com.mhschmieder.fxpolarchart.action;
 
-import java.util.Arrays;
-import java.util.Collection;
-
-import org.controlsfx.control.action.Action;
-
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxcharttoolkit.action.TestActions;
 import com.mhschmieder.fxguitoolkit.action.FileActions;
 import com.mhschmieder.fxguitoolkit.action.LabeledActionFactory;
 import com.mhschmieder.fxguitoolkit.action.SettingsActions;
 import com.mhschmieder.fxguitoolkit.action.XActionGroup;
-
 import javafx.scene.paint.Color;
+import org.controlsfx.control.action.Action;
+
+import java.util.Arrays;
+import java.util.Collection;
 
 /**
  * This is a struct-like container for actions used by Polar Response.

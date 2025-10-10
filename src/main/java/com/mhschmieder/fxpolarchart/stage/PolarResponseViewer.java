@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020, 2025 Mark Schmieder
@@ -30,26 +30,6 @@
  */
 package com.mhschmieder.fxpolarchart.stage;
 
-import java.awt.EventQueue;
-import java.awt.RenderingHints;
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.ByteArrayInputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.util.List;
-import java.util.Locale;
-import java.util.prefs.Preferences;
-import java.util.zip.ZipEntry;
-import java.util.zip.ZipException;
-import java.util.zip.ZipInputStream;
-import java.util.zip.ZipOutputStream;
-
-import org.apache.commons.io.FilenameUtils;
-import org.apache.commons.io.input.SwappedDataInputStream;
-
 import com.mhschmieder.acousticstoolkit.FrequencyRange;
 import com.mhschmieder.acousticstoolkit.FrequencySignalUtilities;
 import com.mhschmieder.acousticstoolkit.RelativeBandwidth;
@@ -79,7 +59,6 @@ import com.mhschmieder.fxpolarchart.swing.PolarAmplitudeChart;
 import com.mhschmieder.fxpolarchart.swing.PolarResponsePanel;
 import com.mhschmieder.fxpolarchart.swing.SemiLogRPolarChart;
 import com.mhschmieder.graphicstoolkit.GraphicsUtilities;
-
 import javafx.application.Platform;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
@@ -89,6 +68,25 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Modality;
+import org.apache.commons.io.FilenameUtils;
+import org.apache.commons.io.input.SwappedDataInputStream;
+
+import java.awt.EventQueue;
+import java.awt.RenderingHints;
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.util.List;
+import java.util.Locale;
+import java.util.prefs.Preferences;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipException;
+import java.util.zip.ZipInputStream;
+import java.util.zip.ZipOutputStream;
 
 /**
  * A viewer for side-by-side horizontal and vertical polar response charts.
@@ -520,7 +518,7 @@ public class PolarResponseViewer extends XStage {
         final double centerFrequency = prefs.getDouble( "centerFrequency", 
                                                         centerFrequencyDefault );
         final FrequencyRange frequencyRange = new FrequencyRange(
-                RelativeBandwidth.fromPresentationString( sRelativeBandwidth ), 
+                RelativeBandwidth.defaultValue().valueOfLabel( sRelativeBandwidth ),
                 sOctaveRange, 
                 centerFrequency );
         setFrequencyRange( _frequencyRange );
@@ -541,7 +539,7 @@ public class PolarResponseViewer extends XStage {
         final Preferences prefs = super.loadPreferences();
 
         final RelativeBandwidth relativeBandwidth = _frequencyRange.getRelativeBandwidth();
-        prefs.put( "relativeBandwidth", relativeBandwidth.toPresentationString() );
+        prefs.put( "relativeBandwidth", relativeBandwidth.label() );
         final String octaveRange = _frequencyRange.getOctaveRange();
         prefs.put( "octaveRange", octaveRange );
         final double centerFrequency = _frequencyRange.getCenterFrequency();
