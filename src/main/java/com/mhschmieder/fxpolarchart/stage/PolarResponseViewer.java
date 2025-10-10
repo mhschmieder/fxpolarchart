@@ -96,7 +96,8 @@ import java.util.zip.ZipOutputStream;
 public class PolarResponseViewer extends XStage {
 
 
-    public static final String POLAR_RESPONSE_FRAME_TITLE_DEFAULT   = "Polar Response Viewer";
+    public static final String POLAR_RESPONSE_FRAME_TITLE_DEFAULT
+            = "Polar Response Viewer";
 
     // Default window locations and dimensions.
     public static final int    POLAR_RESPONSE_VIEWER_X_DEFAULT      = 20;
@@ -107,7 +108,8 @@ public class PolarResponseViewer extends XStage {
     // Handle the Polar Response prediction servlet's HTTP and/or authorization
     // status, and echo the formatted error response to the user if an HTTP
     // error code is detected.
-    private static final boolean handleDataServerResponse( final DataServerResponse dataServerResponse ) {
+    private static boolean handleDataServerResponse(
+            final DataServerResponse dataServerResponse ) {
         // If there were any server errors, report to the session log.
         final String serverStatusMessage = dataServerResponse.getServerStatusMessage();
         if ( serverStatusMessage != null ) {
