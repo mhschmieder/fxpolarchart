@@ -30,9 +30,9 @@
  */
 package com.mhschmieder.fxpolarchart.swing;
 
-import com.mhschmieder.acousticstoolkit.FrequencySignalUtilities;
-import com.mhschmieder.acousticstoolkit.RelativeBandwidth;
-import com.mhschmieder.mathtoolkit.MathConstants;
+import com.mhschmieder.jacoustics.FrequencySignalUtilities;
+import com.mhschmieder.jacoustics.RelativeBandwidth;
+import com.mhschmieder.jmath.MathConstants;
 import org.apache.commons.math3.util.FastMath;
 
 import java.awt.Dimension;

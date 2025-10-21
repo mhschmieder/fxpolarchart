@@ -30,11 +30,11 @@
  */
 package com.mhschmieder.fxpolarchart.net;
 
-import com.mhschmieder.acousticstoolkit.FrequencyRange;
-import com.mhschmieder.acousticstoolkit.RelativeBandwidth;
-import com.mhschmieder.commonstoolkit.net.DataRequestParameters;
-import com.mhschmieder.commonstoolkit.security.LoginCredentials;
-import com.mhschmieder.commonstoolkit.util.DataUpdateType;
+import com.mhschmieder.jacoustics.FrequencyRange;
+import com.mhschmieder.jacoustics.RelativeBandwidth;
+import com.mhschmieder.jcommons.net.DataRequestParameters;
+import com.mhschmieder.jcommons.security.LoginCredentials;
+import com.mhschmieder.jcommons.util.DataUpdateType;
 
 import java.net.HttpURLConnection;
 

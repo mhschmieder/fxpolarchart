@@ -30,7 +30,6 @@
  */
 package com.mhschmieder.fxpolarchart.control;
 
-import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxchart.action.TestActions;
 import com.mhschmieder.fxguitoolkit.action.XActionGroup;
 import com.mhschmieder.fxguitoolkit.action.XActionUtilities;
@@ -38,6 +37,7 @@ import com.mhschmieder.fxpolarchart.action.PolarResponseActions;
 import com.mhschmieder.fxpolarchart.action.PolarResponseAmplitudeScaleChoices;
 import com.mhschmieder.fxpolarchart.action.PolarResponseLabeledActionFactory;
 import com.mhschmieder.fxpolarchart.action.PolarResponseViewActions;
+import com.mhschmieder.jcommons.util.ClientProperties;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;

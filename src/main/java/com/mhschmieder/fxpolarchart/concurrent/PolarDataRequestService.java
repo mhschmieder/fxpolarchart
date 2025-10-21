@@ -30,11 +30,11 @@
  */
 package com.mhschmieder.fxpolarchart.concurrent;
 
-import com.mhschmieder.commonstoolkit.net.HttpServletRequestProperties;
-import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxconcurrent.DataRequestTask;
 import com.mhschmieder.fxconcurrent.TrackableDataRequestService;
 import com.mhschmieder.fxconcurrent.stage.DataRequestStatusViewer;
+import com.mhschmieder.jcommons.net.HttpServletRequestProperties;
+import com.mhschmieder.jcommons.util.ClientProperties;
 
 public final class PolarDataRequestService extends TrackableDataRequestService {
 

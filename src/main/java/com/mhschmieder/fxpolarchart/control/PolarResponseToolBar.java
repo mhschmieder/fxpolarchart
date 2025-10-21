@@ -30,11 +30,11 @@
  */
 package com.mhschmieder.fxpolarchart.control;
 
-import com.mhschmieder.acousticstoolkit.FrequencyRange;
-import com.mhschmieder.acousticstoolkit.RelativeBandwidth;
-import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxacoustics.control.FrequencyRangeControls;
 import com.mhschmieder.fxguitoolkit.control.TextSelector;
+import com.mhschmieder.jacoustics.FrequencyRange;
+import com.mhschmieder.jacoustics.RelativeBandwidth;
+import com.mhschmieder.jcommons.util.ClientProperties;
 import javafx.scene.control.ToolBar;
 
 import java.text.NumberFormat;

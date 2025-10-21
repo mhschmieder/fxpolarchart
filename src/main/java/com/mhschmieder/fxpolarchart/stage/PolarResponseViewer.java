@@ -30,18 +30,6 @@
  */
 package com.mhschmieder.fxpolarchart.stage;
 
-import com.mhschmieder.acousticstoolkit.FrequencyRange;
-import com.mhschmieder.acousticstoolkit.FrequencySignalUtilities;
-import com.mhschmieder.acousticstoolkit.RelativeBandwidth;
-import com.mhschmieder.commonstoolkit.branding.ProductBranding;
-import com.mhschmieder.commonstoolkit.io.FileMode;
-import com.mhschmieder.commonstoolkit.io.FileStatus;
-import com.mhschmieder.commonstoolkit.io.IoUtilities;
-import com.mhschmieder.commonstoolkit.io.ZipUtilities;
-import com.mhschmieder.commonstoolkit.net.DataServerResponse;
-import com.mhschmieder.commonstoolkit.net.HttpServletRequestProperties;
-import com.mhschmieder.commonstoolkit.security.ServerLoginCredentials;
-import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxconcurrent.stage.DataRequestStatusViewer;
 import com.mhschmieder.fxguitoolkit.control.TextSelector;
 import com.mhschmieder.fxguitoolkit.dialog.DialogUtilities;
@@ -59,6 +47,18 @@ import com.mhschmieder.fxpolarchart.swing.PolarAmplitudeChart;
 import com.mhschmieder.fxpolarchart.swing.PolarResponsePanel;
 import com.mhschmieder.fxpolarchart.swing.SemiLogRPolarChart;
 import com.mhschmieder.graphicstoolkit.GraphicsUtilities;
+import com.mhschmieder.jacoustics.FrequencyRange;
+import com.mhschmieder.jacoustics.FrequencySignalUtilities;
+import com.mhschmieder.jacoustics.RelativeBandwidth;
+import com.mhschmieder.jcommons.branding.ProductBranding;
+import com.mhschmieder.jcommons.io.FileMode;
+import com.mhschmieder.jcommons.io.FileStatus;
+import com.mhschmieder.jcommons.io.IoUtilities;
+import com.mhschmieder.jcommons.io.ZipUtilities;
+import com.mhschmieder.jcommons.net.DataServerResponse;
+import com.mhschmieder.jcommons.net.HttpServletRequestProperties;
+import com.mhschmieder.jcommons.security.ServerLoginCredentials;
+import com.mhschmieder.jcommons.util.ClientProperties;
 import javafx.application.Platform;
 import javafx.geometry.Insets;
 import javafx.scene.Node;

@@ -33,7 +33,7 @@ package com.mhschmieder.fxpolarchart.swing;
 import com.mhschmieder.charttoolkit.layout.Chart;
 import com.mhschmieder.graphicstoolkit.color.ColorUtilities;
 import com.mhschmieder.graphicstoolkit.font.FontUtilities;
-import com.mhschmieder.mathtoolkit.MathConstants;
+import com.mhschmieder.jmath.MathConstants;
 
 import java.awt.BasicStroke;
 import java.awt.Color;

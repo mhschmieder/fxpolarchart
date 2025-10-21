@@ -30,11 +30,11 @@
  */
 package com.mhschmieder.fxpolarchart.concurrent;
 
-import com.mhschmieder.commonstoolkit.net.DataRequestParameters;
-import com.mhschmieder.commonstoolkit.net.HttpServletRequestProperties;
-import com.mhschmieder.commonstoolkit.util.ClientProperties;
-import com.mhschmieder.commonstoolkit.util.DataUpdateType;
 import com.mhschmieder.fxconcurrent.DataRequestTask;
+import com.mhschmieder.jcommons.net.DataRequestParameters;
+import com.mhschmieder.jcommons.net.HttpServletRequestProperties;
+import com.mhschmieder.jcommons.util.ClientProperties;
+import com.mhschmieder.jcommons.util.DataUpdateType;
 
 /**
  * This is a task wrapper for Polar Response prediction server requests.
