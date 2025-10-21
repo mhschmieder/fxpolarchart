@@ -33,7 +33,7 @@ package com.mhschmieder.fxpolarchart.control;
 import com.mhschmieder.acousticstoolkit.FrequencyRange;
 import com.mhschmieder.acousticstoolkit.RelativeBandwidth;
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
-import com.mhschmieder.fxacousticsgui.control.FrequencyRangeControls;
+import com.mhschmieder.fxacoustics.control.FrequencyRangeControls;
 import com.mhschmieder.fxguitoolkit.control.TextSelector;
 import javafx.scene.control.ToolBar;
 
