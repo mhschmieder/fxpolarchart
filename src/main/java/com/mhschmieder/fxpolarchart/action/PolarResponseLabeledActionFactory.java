@@ -45,8 +45,8 @@ import java.util.Collection;
  */
 public class PolarResponseLabeledActionFactory {
 
-    @SuppressWarnings("nls") public static final String BUNDLE_NAME =
-                                                                    "properties.PolarResponseActionLabels";
+    // NOTE: We must substitute "." for resource directory tree delimiters.
+    public static final String BUNDLE_NAME = "properties.PolarResponseActionLabels";
 
     @SuppressWarnings("nls")
     public static final XActionGroup getScaleChoiceGroup( final ClientProperties pClientProperties,
