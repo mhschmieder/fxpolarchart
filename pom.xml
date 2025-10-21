@@ -111,7 +111,7 @@
         </dependency>
         <dependency>
             <groupId>com.mhschmieder</groupId>
-            <artifactId>fxcharttoolkit</artifactId>
+            <artifactId>fxchart</artifactId>
             <version>0.1-SNAPSHOT</version>
         </dependency>
         <dependency>

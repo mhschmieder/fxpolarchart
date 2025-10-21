@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020, 2025 Mark Schmieder
@@ -31,7 +31,7 @@
 package com.mhschmieder.fxpolarchart.action;
 
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
-import com.mhschmieder.fxcharttoolkit.action.TestActions;
+import com.mhschmieder.fxchart.action.TestActions;
 import com.mhschmieder.fxguitoolkit.action.ActionFactory;
 import com.mhschmieder.fxguitoolkit.action.LabeledActionFactory;
 import com.mhschmieder.fxguitoolkit.action.XAction;
