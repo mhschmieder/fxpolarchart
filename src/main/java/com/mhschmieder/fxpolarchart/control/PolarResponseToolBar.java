@@ -31,7 +31,7 @@
 package com.mhschmieder.fxpolarchart.control;
 
 import com.mhschmieder.fxacoustics.control.FrequencyRangeControls;
-import com.mhschmieder.fxguitoolkit.control.TextSelector;
+import com.mhschmieder.fxcontrols.control.TextSelector;
 import com.mhschmieder.jacoustics.FrequencyRange;
 import com.mhschmieder.jacoustics.RelativeBandwidth;
 import com.mhschmieder.jcommons.util.ClientProperties;

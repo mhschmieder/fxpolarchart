@@ -30,7 +30,7 @@
  */
 package com.mhschmieder.fxpolarchart.action;
 
-import com.mhschmieder.fxguitoolkit.action.XAction;
+import com.mhschmieder.fxcontrols.action.XAction;
 import com.mhschmieder.jcommons.util.ClientProperties;
 import org.controlsfx.control.action.Action;
 

@@ -31,8 +31,8 @@
 package com.mhschmieder.fxpolarchart.control;
 
 import com.mhschmieder.fxchart.action.TestActions;
-import com.mhschmieder.fxguitoolkit.action.XActionGroup;
-import com.mhschmieder.fxguitoolkit.action.XActionUtilities;
+import com.mhschmieder.fxcontrols.action.XActionGroup;
+import com.mhschmieder.fxcontrols.action.XActionUtilities;
 import com.mhschmieder.fxpolarchart.action.PolarResponseActions;
 import com.mhschmieder.fxpolarchart.action.PolarResponseAmplitudeScaleChoices;
 import com.mhschmieder.fxpolarchart.action.PolarResponseLabeledActionFactory;

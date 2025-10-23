@@ -31,10 +31,10 @@
 package com.mhschmieder.fxpolarchart.action;
 
 import com.mhschmieder.fxchart.action.TestActions;
-import com.mhschmieder.fxguitoolkit.action.FileActions;
-import com.mhschmieder.fxguitoolkit.action.LabeledActionFactory;
-import com.mhschmieder.fxguitoolkit.action.SettingsActions;
-import com.mhschmieder.fxguitoolkit.action.XActionGroup;
+import com.mhschmieder.fxcontrols.action.FileActions;
+import com.mhschmieder.fxcontrols.action.LabeledActionFactory;
+import com.mhschmieder.fxcontrols.action.SettingsActions;
+import com.mhschmieder.fxcontrols.action.XActionGroup;
 import com.mhschmieder.jcommons.util.ClientProperties;
 import javafx.scene.paint.Color;
 import org.controlsfx.control.action.Action;

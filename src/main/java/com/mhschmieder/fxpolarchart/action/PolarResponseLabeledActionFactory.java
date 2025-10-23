@@ -31,10 +31,10 @@
 package com.mhschmieder.fxpolarchart.action;
 
 import com.mhschmieder.fxchart.action.TestActions;
-import com.mhschmieder.fxguitoolkit.action.ActionFactory;
-import com.mhschmieder.fxguitoolkit.action.LabeledActionFactory;
-import com.mhschmieder.fxguitoolkit.action.XAction;
-import com.mhschmieder.fxguitoolkit.action.XActionGroup;
+import com.mhschmieder.fxcontrols.action.ActionFactory;
+import com.mhschmieder.fxcontrols.action.LabeledActionFactory;
+import com.mhschmieder.fxcontrols.action.XAction;
+import com.mhschmieder.fxcontrols.action.XActionGroup;
 import com.mhschmieder.jcommons.util.ClientProperties;
 import org.controlsfx.control.action.Action;
 

@@ -30,9 +30,9 @@
  */
 package com.mhschmieder.fxpolarchart.swing;
 
-import com.mhschmieder.fxguitoolkit.swing.RenderedGraphicsPanel;
-import com.mhschmieder.graphicstoolkit.color.ColorUtilities;
+import com.mhschmieder.fxcontrols.swing.RenderedGraphicsPanel;
 import com.mhschmieder.jacoustics.RelativeBandwidth;
+import com.mhschmieder.jgraphics.color.ColorUtilities;
 
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;

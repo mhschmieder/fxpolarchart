@@ -30,9 +30,9 @@
  */
 package com.mhschmieder.fxpolarchart.swing;
 
-import com.mhschmieder.charttoolkit.layout.Chart;
-import com.mhschmieder.graphicstoolkit.color.ColorUtilities;
-import com.mhschmieder.graphicstoolkit.font.FontUtilities;
+import com.mhschmieder.jchart.layout.Chart;
+import com.mhschmieder.jgraphics.color.ColorUtilities;
+import com.mhschmieder.jgraphics.font.FontUtilities;
 import com.mhschmieder.jmath.MathConstants;
 
 import java.awt.BasicStroke;
