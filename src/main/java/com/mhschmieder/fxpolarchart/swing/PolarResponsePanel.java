@@ -30,7 +30,7 @@
  */
 package com.mhschmieder.fxpolarchart.swing;
 
-import com.mhschmieder.fxcontrols.swing.RenderedGraphicsPanel;
+import com.mhschmieder.fxgui.swing.RenderedGraphicsPanel;
 import com.mhschmieder.jacoustics.RelativeBandwidth;
 import com.mhschmieder.jgraphics.color.ColorUtilities;
 

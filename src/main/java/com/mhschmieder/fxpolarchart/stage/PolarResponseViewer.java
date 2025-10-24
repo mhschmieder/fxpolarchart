@@ -32,11 +32,11 @@ package com.mhschmieder.fxpolarchart.stage;
 
 import com.mhschmieder.fxconcurrent.stage.DataRequestStatusViewer;
 import com.mhschmieder.fxcontrols.control.TextSelector;
-import com.mhschmieder.fxcontrols.dialog.DialogUtilities;
-import com.mhschmieder.fxcontrols.stage.ExtensionFilterUtilities;
-import com.mhschmieder.fxcontrols.stage.ExtensionFilters;
-import com.mhschmieder.fxcontrols.stage.RenderedGraphicsExportPreview;
-import com.mhschmieder.fxcontrols.stage.XStage;
+import com.mhschmieder.fxgui.dialog.DialogUtilities;
+import com.mhschmieder.fxgui.stage.ExtensionFilterUtilities;
+import com.mhschmieder.fxgui.stage.ExtensionFilters;
+import com.mhschmieder.fxgui.stage.RenderedGraphicsExportPreview;
+import com.mhschmieder.fxgui.stage.XStage;
 import com.mhschmieder.fxpolarchart.action.PolarResponseActions;
 import com.mhschmieder.fxpolarchart.concurrent.PolarDataRequestService;
 import com.mhschmieder.fxpolarchart.control.PolarResponseMenuFactory;

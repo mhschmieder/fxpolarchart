@@ -30,7 +30,7 @@
  */
 package com.mhschmieder.fxpolarchart.layout;
 
-import com.mhschmieder.fxcontrols.layout.LayoutFactory;
+import com.mhschmieder.fxcontrols.util.RegionUtilities;
 import com.mhschmieder.fxpolarchart.action.PolarResponseActions;
 import com.mhschmieder.fxpolarchart.control.PolarResponseMenuFactory;
 import com.mhschmieder.fxpolarchart.swing.PolarAmplitudeChart;
@@ -211,7 +211,7 @@ public final class PolarResponsePane extends BorderPane {
     // foreground color is set to complement it for text-based components.
     public void setForegroundFromBackground( final Color backColor ) {
         // Set the new Background first, so it sets context for CSS derivations.
-        final Background background = LayoutFactory.makeRegionBackground( backColor );
+        final Background background = RegionUtilities.makeRegionBackground( backColor );
         setBackground( background );
 
         // Forward this method to the subcomponents.
