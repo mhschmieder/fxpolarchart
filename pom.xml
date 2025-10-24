@@ -116,7 +116,7 @@
         </dependency>
         <dependency>
         	<groupId>com.mhschmieder</groupId>
-        	<artifactId>fxacoustics</artifactId>
+        	<artifactId>fxacousticscontrols</artifactId>
         	<version>0.1-SNAPSHOT</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.controlsfx/controlsfx -->
