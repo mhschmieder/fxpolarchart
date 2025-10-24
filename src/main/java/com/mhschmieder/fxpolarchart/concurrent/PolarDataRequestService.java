@@ -30,8 +30,8 @@
  */
 package com.mhschmieder.fxpolarchart.concurrent;
 
-import com.mhschmieder.fxconcurrent.DataRequestTask;
-import com.mhschmieder.fxconcurrent.TrackableDataRequestService;
+import com.mhschmieder.fxconcurrent.task.DataRequestTask;
+import com.mhschmieder.fxconcurrent.service.TrackableDataRequestService;
 import com.mhschmieder.fxconcurrent.stage.DataRequestStatusViewer;
 import com.mhschmieder.jcommons.net.HttpServletRequestProperties;
 import com.mhschmieder.jcommons.util.ClientProperties;

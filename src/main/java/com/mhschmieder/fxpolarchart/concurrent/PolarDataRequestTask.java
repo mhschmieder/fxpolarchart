@@ -30,7 +30,7 @@
  */
 package com.mhschmieder.fxpolarchart.concurrent;
 
-import com.mhschmieder.fxconcurrent.DataRequestTask;
+import com.mhschmieder.fxconcurrent.task.DataRequestTask;
 import com.mhschmieder.jcommons.net.DataRequestParameters;
 import com.mhschmieder.jcommons.net.HttpServletRequestProperties;
 import com.mhschmieder.jcommons.util.ClientProperties;
