@@ -32,6 +32,7 @@ package com.mhschmieder.fxpolarchart.swing;
 
 import com.mhschmieder.fxgui.swing.RenderedGraphicsPanel;
 import com.mhschmieder.jacoustics.RelativeBandwidth;
+import com.mhschmieder.jchart.layout.PolarAmplitudePlot;
 import com.mhschmieder.jgraphics.color.ColorUtilities;
 
 import javax.swing.BorderFactory;
@@ -49,8 +50,8 @@ public final class PolarResponsePanel extends RenderedGraphicsPanel {
 
     // Declare and instantiate all of the UI components.
     private JPanel             _polarPlotGraphicsPanel;
-    public PolarAmplitudeChart _polarPlotHz;
-    public PolarAmplitudeChart _polarPlotVt;
+    public PolarAmplitudePlot _polarPlotHz;
+    public PolarAmplitudePlot _polarPlotVt;
 
     public PolarResponsePanel( final int polarResponseViewerWidth,
                                final int polarResponseViewerHeight,
@@ -109,11 +110,11 @@ public final class PolarResponsePanel extends RenderedGraphicsPanel {
                             final double angleIncrementDegrees )
             throws Exception {
         // Make the individual plots for horizontal and vertical polar patterns.
-        _polarPlotHz = new PolarAmplitudeChart( polarResponseViewerWidth,
+        _polarPlotHz = new PolarAmplitudePlot( polarResponseViewerWidth,
                                                 polarResponseViewerHeight,
                                                 "Horizontal", //$NON-NLS-1$
                                                 angleIncrementDegrees );
-        _polarPlotVt = new PolarAmplitudeChart( polarResponseViewerWidth,
+        _polarPlotVt = new PolarAmplitudePlot( polarResponseViewerWidth,
                                                 polarResponseViewerHeight,
                                                 "Vertical",//$NON-NLS-1$
                                                 angleIncrementDegrees );

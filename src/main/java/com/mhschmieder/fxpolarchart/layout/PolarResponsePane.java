@@ -33,7 +33,7 @@ package com.mhschmieder.fxpolarchart.layout;
 import com.mhschmieder.fxcontrols.util.RegionUtilities;
 import com.mhschmieder.fxpolarchart.action.PolarResponseActions;
 import com.mhschmieder.fxpolarchart.control.PolarResponseMenuFactory;
-import com.mhschmieder.fxpolarchart.swing.PolarAmplitudeChart;
+import com.mhschmieder.jchart.layout.PolarAmplitudePlot;
 import com.mhschmieder.jacoustics.RelativeBandwidth;
 import com.mhschmieder.jcommons.util.ClientProperties;
 import com.mhschmieder.jgraphics.GraphicsUtilities;
@@ -53,9 +53,9 @@ public final class PolarResponsePane extends BorderPane {
 
     // Declare and instantiate all of the UI components.
     protected SwingNode           _polarPlotHzSwingNode;
-    protected PolarAmplitudeChart _awtPolarPlotHz;
+    protected PolarAmplitudePlot _awtPolarPlotHz;
     protected SwingNode           _polarPlotVtSwingNode;
-    protected PolarAmplitudeChart _awtPolarPlotVt;
+    protected PolarAmplitudePlot _awtPolarPlotVt;
 
     /**
      * Keep track of which window owns the context menu, for focus and dismissal
@@ -134,11 +134,11 @@ public final class PolarResponsePane extends BorderPane {
         EventQueue.invokeLater( () -> {
             // Make the individual plots for horizontal and vertical polar
             // patterns.
-            _awtPolarPlotHz = new PolarAmplitudeChart( polarResponseViewerWidth,
+            _awtPolarPlotHz = new PolarAmplitudePlot( polarResponseViewerWidth,
                                                        polarResponseViewerHeight,
                                                        "Horizontal", //$NON-NLS-1$
                                                        angleIncrementDegrees );
-            _awtPolarPlotVt = new PolarAmplitudeChart( polarResponseViewerWidth,
+            _awtPolarPlotVt = new PolarAmplitudePlot( polarResponseViewerWidth,
                                                        polarResponseViewerHeight,
                                                        "Vertical", //$NON-NLS-1$
                                                        angleIncrementDegrees );
@@ -237,7 +237,7 @@ public final class PolarResponsePane extends BorderPane {
 
     protected void updateCursorCoordinates( final double cursorX,
                                             final double cursorY,
-                                            final PolarAmplitudeChart polarAmplitudeChart ) {
+                                            final PolarAmplitudePlot polarAmplitudeChart ) {
         // TODO: Implement this after we replace the AWT version of the Polar
         // Chart, which has its own data tracking at the moment (using AWT).
     }

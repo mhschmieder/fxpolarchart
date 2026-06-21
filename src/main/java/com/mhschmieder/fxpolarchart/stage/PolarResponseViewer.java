@@ -43,9 +43,9 @@ import com.mhschmieder.fxpolarchart.control.PolarResponseMenuFactory;
 import com.mhschmieder.fxpolarchart.control.PolarResponseToolBar;
 import com.mhschmieder.fxpolarchart.layout.PolarResponsePane;
 import com.mhschmieder.fxpolarchart.net.PolarDataRequestParameters;
-import com.mhschmieder.fxpolarchart.swing.PolarAmplitudeChart;
+import com.mhschmieder.jchart.layout.PolarAmplitudePlot;
 import com.mhschmieder.fxpolarchart.swing.PolarResponsePanel;
-import com.mhschmieder.fxpolarchart.swing.SemiLogRPolarChart;
+import com.mhschmieder.jchart.layout.SemiLogRPolarPlot;
 import com.mhschmieder.jacoustics.FrequencyRange;
 import com.mhschmieder.jacoustics.FrequencySignalUtilities;
 import com.mhschmieder.jacoustics.RelativeBandwidth;
@@ -527,7 +527,7 @@ public class PolarResponseViewer extends XStage {
         
         // Set the appropriate grid spacing for polar response radial scale.
         final int gridSpacing = prefs.getInt( "gridSpacing",
-                                              SemiLogRPolarChart.DEFAULT_GRID_SPACING );
+                                              SemiLogRPolarPlot.DEFAULT_GRID_SPACING );
         setGridSpacing( gridSpacing );
         
         return prefs;
@@ -951,7 +951,7 @@ public class PolarResponseViewer extends XStage {
                                       amplitude,
                                       0,
                                       numberOfDataPoints,
-                                      PolarAmplitudeChart.DEFAULT_AMPLITUDE );
+                                      PolarAmplitudePlot.DEFAULT_AMPLITUDE );
         if ( !succeeded ) {
             return false;
         }
